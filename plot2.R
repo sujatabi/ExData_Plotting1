@@ -8,8 +8,6 @@ powerfeb <- subset(power,power$Date==as.Date("2007-02-01")|power$Date==as.Date("
 powerfeb$datetime <- paste(powerfeb$Date, powerfeb$Time)
 powerfeb$datetime <- strptime(datetime, "%Y-%m-%d %H:%M:%S")
 
-powerfeb$weekday <- wday(powerfeb$datetime,label=TRUE)
-
 plot(powerfeb$datetime,powerfeb$Global_active_power, ylab="Global Active Power (kilowatts)", xlab="", type="l")
 
 ## Copy my plot to a PNG file
